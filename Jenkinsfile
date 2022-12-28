@@ -28,8 +28,8 @@ pipeline {
                   rsync -avz --exclude  '.git' --delete -e "ssh -i $sshkey" ./ vagrant@192.168.33.11:/app/
                   rsync -avz --exclude  '.git' --delete -e "ssh -i $sshkey" ./ vagrant@192.168.33.12:/app/
 
-                  ssh -i $sshkey vagrant@192.168.33.11 "sudo systemctl restart nodeapp"
-                  ssh -i $sshkey vagrant@192.168.33.12 "sudo systemctl restart nodeapp"
+                  ssh -i $sshkey vagrant@192.168.33.11 "sudo systemctl restart appnode"
+                  ssh -i $sshkey vagrant@192.168.33.12 "sudo systemctl restart appnode"
 
                   '''
               }
